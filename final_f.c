@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <math.h>
+
 
 int main(){
 
@@ -7,7 +9,7 @@ int main(){
     int lastDigit;
     int wholeNum;
 
-    printf("Enter your number and I will return the final digit of the number: ");
+    printf("Enter a float number with a max of 2 decimal places and I will return the final digit of the number: ");
 
     scanf("%f", &userInput); 
 
