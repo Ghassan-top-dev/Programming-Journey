@@ -28,7 +28,7 @@ int main(){
 
     avg =  avg / numStudents; 
 
-    printf("The average height of students in the classroom is: %f", avg); 
+    printf("The average height of students in the classroom is: %0.2fcm\n", avg); 
     
 
 
