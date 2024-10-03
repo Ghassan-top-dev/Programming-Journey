@@ -1,3 +1,15 @@
+/*
+
+TODO
+
+-make it able to show am or pm when user chose 24 and your showing 12
+
+-make the bs with closest departure time work to show 12 hour format if 24 hours is chose and implement if 12 was chosen. 
+
+
+*/
+
+
 #include <stdio.h>
 
 
@@ -5,6 +17,16 @@ int main(){
 
     int timeFormat, hour, mins, hourCheck; //time variables
     char amPm; 
+    int closestDep; 
+    int arr[] = {715,815,915,1015,1115,1515,1615,1715}; 
+    int i;
+    int difference;  
+    char formatted_number[6];  // Enough space for "7:15" + null terminator
+
+ 
+ 
+
+
 
 
     printf("Would you like to enter the time in 12-hour format (enter 1) or 24-hour format (enter 2)? "); //this prompts the user for the time format
@@ -62,9 +84,9 @@ int main(){
     {
 
         printf("Enter a value between 0 and 24 for hour: ");
-        scanf("%d\n", &hour);
+        scanf("%d", &hour);
         printf("Enter a value between 0 and 60 for minutes: ");
-        scanf("%d\n", &mins);
+        scanf("%d", &mins);
 
 
         if (hour <= 12)
@@ -84,8 +106,66 @@ int main(){
         printf("---------------------------\n"); 
 
 
+        closestDep = hour; 
+
+        closestDep = closestDep * 100 + mins;
+
+
+
+
+
+
+        for (i = 0; i < 8; i++)
+        {
+
+
+            if (arr[i] - closestDep > 0)
+            {
+                difference = arr[i] - closestDep; 
+
+
+
+                /*if (hour <= 12){
+                                
+                    hourCheck = hour; 
+                }
+                else if(hour > 12){
+                    hourCheck = hour; 
+                    hourCheck = hourCheck - 12; 
+
+                }*/
+
+
+                // Use sprintf to format the string
+                sprintf(formatted_number, "%d:%02d", arr[i] / 100, arr[i] % 100);
+
+                // Print the result
+                printf("The closest departure time is: %s\n", formatted_number);
+
+
+                
+                break;
+
+
+            }
+
+        }
+        
+        
+         
+
+
+
+
     }
+
+
     
 
     return 0; 
 }
+
+
+
+
+
