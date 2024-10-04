@@ -5,9 +5,11 @@ TODO
 -make it able to show am or pm when user chose 24 and your showing 12 - FIXED
 
 -make the bs with closest departure time work to show 12 hour format if 24 hours is chose - FIXED
--implement if 12 was chosen. 
+-implement if 12 was chosen. - FIXED
 
+MOVE ON TO TASK 3
 
+-COMMENT CODE
 */
 
 
@@ -79,6 +81,49 @@ int main(){
         }
         
 
+
+
+
+
+        closestDep = hourCheck; 
+
+        closestDep = closestDep * 100 + mins;
+
+
+
+
+
+
+        for (i = 0; i < 8; i++)
+        {
+
+
+            if (arr[i] - closestDep > 0)
+            {
+               // difference = arr[i] - closestDep; // not sure what this is for
+                
+                // Use sprintf to format the string
+                
+                if (arr[i] <= 1115)
+                {
+                    sprintf(formatted_number, "%d:%02d", arr[i] / 100, arr[i] % 100);
+                }
+                else if(arr[i] > 1115){
+
+                    sprintf(formatted_number, "%d:%02d", (arr[i] - 1200) / 100, arr[i] % 100);
+                }
+
+                // Print the result
+                printf("The closest departure time is: %s %cm\n", formatted_number, amPm);
+
+                
+                break; // leaves the loop if condion is met
+
+
+            }
+
+        }
+
         
 
 
@@ -115,11 +160,6 @@ int main(){
         closestDep = hour; 
 
         closestDep = closestDep * 100 + mins;
-
-
-
-
-
 
         for (i = 0; i < 8; i++)
         {
