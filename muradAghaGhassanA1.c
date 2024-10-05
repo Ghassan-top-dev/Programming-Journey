@@ -14,18 +14,13 @@ MOVE ON TO TASK 3
 
 
 #include <stdio.h>
-
-
 int main(){
 
     int timeFormat, hour, mins, hourCheck, lessThan12; //time variables
     char amPm; 
-    int closestDep; 
+    int closestDep, hotel, i, hotelChoice, dayInMontreal; 
     int arr[] = {715,815,915,1015,1115,1515,1615,1715}; 
-    int i;
-    int difference;  
     char formatted_number[6];  // Enough space for "7:15" + null terminator
-    int comeBackTom = 0; 
 
 
  
@@ -190,16 +185,27 @@ int main(){
             }
 
         }
-        
-        
-         
+
+    }
+
+
+    printf("Would you like a hotel in Montreal - Enter 0 for no; 1 for yes? "); 
+    scanf("%d", &hotel);
+
+    if (hotel == 1)
+    {
+        printf("There are 3 hotels: \n1. Marriott: $248\n2. Sheraton: $90\n3. Double Tree: $128\n\n");  
+
+        printf("Your choice?:");  
+        scanf("%d", &hotelChoice);
+        printf("How many days in Montreal?");
+        scanf("%d", &dayInMontreal);
+
 
 
 
 
     }
-
-
     
 
     return 0; 
