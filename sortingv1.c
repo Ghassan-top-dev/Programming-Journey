@@ -10,31 +10,16 @@ int main(){
     lastNum = arrLength - 1; 
     int printer = 0; 
 
-    int currentIndex = 0; 
     
- for (n = -2; n < arrLength; n++){
-
+ for (n = 0; n < arrLength; n++){
     for (i = 0; i < arrLength; i++){
-        
-
-        
-        if (arr[currentIndex] > arr[currentIndex + 1])
+        if (arr[i] > arr[i + 1])
         {
-            temp = arr[currentIndex + 1];
-            arr[currentIndex + 1] = arr[currentIndex]; 
-            arr[currentIndex] = temp; 
-            currentIndex++;
-        }else if(arr[currentIndex] < arr[currentIndex + 1]){
-            currentIndex++;
+            temp = arr[i + 1];
+            arr[i + 1] = arr[i]; 
+            arr[i] = temp; 
         }
-        else{
-            currentIndex = 0; 
-
-        }
-
-
     }
-
  }
 
    
@@ -47,5 +32,3 @@ int main(){
 
     return 0; 
 }
-
-
