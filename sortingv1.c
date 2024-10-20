@@ -1,34 +1,38 @@
 #include <stdio.h>
 
-
 int main(){
 
-    int arr[] = {42, 7, 93, 15, 64, 27, 38, 12, 58, 3, 85, 19, 71, 29, 6, 50, 81, 33};
-    int arrLength = 18; 
-    int temp, i, lastNum, followedIndex, n;
+    int arrLength;
+    printf("Enter how many numbers you want to be sorted (Total amount): ");
+    scanf("%d", &arrLength);
 
-    lastNum = arrLength - 1; 
-    int printer = 0; 
+    int temp, i, n, c;
+    int arr[arrLength];  // Declare the array based on user input
 
+    // Input the array elements
+    for (c = 0; c < arrLength; c++) {
+        printf("Enter your numbers: ");
+        scanf("%d", &arr[c]);
+    }
     
- for (n = 0; n < arrLength; n++){
-    for (i = 0; i < arrLength; i++){
-        if (arr[i] > arr[i + 1])
-        {
-            temp = arr[i + 1];
-            arr[i + 1] = arr[i]; 
-            arr[i] = temp; 
+    // Bubble sort algorithm
+    for (n = 0; n < arrLength - 1; n++) {
+        for (i = 0; i < arrLength - 1 - n; i++) {  
+            if (arr[i] > arr[i + 1]) {
+                // Swap arr[i] and arr[i + 1]
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
         }
     }
- }
 
-   
-    for (printer = 0; printer < arrLength; printer++){
-        printf("%d\n", arr[printer]);   
+    // Print the sorted array
+    printf("\n\n");
+    printf("Sorted array:\n");
+    for (i = 0; i < arrLength; i++) {
+        printf("%d\n", arr[i]);   
     }
-  
-
-
 
     return 0; 
 }
