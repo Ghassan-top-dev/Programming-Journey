@@ -2,22 +2,22 @@
 
 
 
-for (i = 0; i < arrLength; i++){
-        
-        followedIndex = arr[lastNum]; 
-        
-        if (followedIndex < arr[lastNum - 1])
-        {
-            temp = followedIndex;
-            arr[lastNum] = arr[lastNum - 1]; 
-            followedIndex = arr[lastNum - 1]; 
-             for (i = 0; i < arrLength; i++){
-            printf("%d\n", arr[printer]);   
-            printer++; 
-            }
-        }
-        printf("\n\n");   
+for (i = 0; i < arrLength; i++){ //big bertha
 
+        
+        for (n = 0; n < arrLength; n++){
+        
+        if (arr[lastNum] < arr[lastNum - n])
+        {
+            temp = arr[lastNum];
+            arr[lastNum] = arr[lastNum - n]; 
+            arr[lastNum - n] = temp; 
+            followedIndex = arr[lastNum - n]; 
+
+
+        }
+
+        
     }
 
 
