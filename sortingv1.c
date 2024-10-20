@@ -1,8 +1,20 @@
 #include <stdio.h>
 
 
+int main(){
 
-for (i = 0; i < arrLength; i++){ //big bertha
+    int arr[] = {3,2,1}; 
+    int arrLength = 3; 
+    int temp, i, lastNum, followedIndex, n;
+
+    lastNum = arrLength - 1; 
+    int printer = 0; 
+    
+
+
+
+
+   for (i = 0; i < arrLength; i++){ //big bertha
 
         
         for (n = 0; n < arrLength; n++){
@@ -20,7 +32,20 @@ for (i = 0; i < arrLength; i++){ //big bertha
         
     }
 
+    }
+   
+    printer = 0;
+    for (i = 0; i < arrLength; i++){
+        printf("%d\n", arr[printer]);   
+        printer++; 
+    }
+  
 
 
-  return 0;
+
+    return 0; 
 }
+
+
+
+
