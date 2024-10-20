@@ -2,17 +2,22 @@
 
 
 
-int main(){
-
-  for (i = 0; i < arrLength; i++){
-                
-        if (arr[lastNum] < arr[lastNum - 1])
-        {
-            temp = arr[lastNum];
-            arr[lastNum] = arr[lastNum - 1]; 
-            arr[lastNum - 1] = temp; 
-        }
+for (i = 0; i < arrLength; i++){
         
+        followedIndex = arr[lastNum]; 
+        
+        if (followedIndex < arr[lastNum - 1])
+        {
+            temp = followedIndex;
+            arr[lastNum] = arr[lastNum - 1]; 
+            followedIndex = arr[lastNum - 1]; 
+             for (i = 0; i < arrLength; i++){
+            printf("%d\n", arr[printer]);   
+            printer++; 
+            }
+        }
+        printf("\n\n");   
+
     }
 
 
