@@ -9,35 +9,35 @@ int main(){
 
     lastNum = arrLength - 1; 
     int printer = 0; 
+
+    int currentIndex = 0; 
     
 
 
-
-
-   for (i = 0; i < arrLength; i++){ //big bertha
+    for (i = 0; i < arrLength; i++){
+        
 
         
-        for (n = 0; n < arrLength; n++){
-        
-        if (arr[lastNum] < arr[lastNum - n])
+        if (arr[currentIndex] > arr[currentIndex + 1])
         {
-            temp = arr[lastNum];
-            arr[lastNum] = arr[lastNum - n]; 
-            arr[lastNum - n] = temp; 
-            followedIndex = arr[lastNum - n]; 
+            temp = arr[currentIndex + 1];
+            arr[currentIndex + 1] = arr[currentIndex]; 
+            arr[currentIndex] = temp; 
+            currentIndex++;
 
-
+            
+            
         }
 
-        
-    }
+        printf("\n\n");   
 
     }
+
+
+
    
-    printer = 0;
-    for (i = 0; i < arrLength; i++){
+    for (printer = 0; printer < arrLength; printer++){
         printf("%d\n", arr[printer]);   
-        printer++; 
     }
   
 
