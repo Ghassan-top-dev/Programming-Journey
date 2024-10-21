@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include<unistd.h>
+
 
 
 int main(void)
@@ -12,6 +14,9 @@ int main(void)
     //don't know what this does exactly
     SDL_Window      *win = NULL;
     SDL_Renderer    *ren = NULL;
+    int green = 0; //variable for changing color green
+    int red = 255; //variable for changing color red
+    int timer = 2; 
 
     SDL_Init(SDL_INIT_EVERYTHING); //no clue
     SDL_CreateWindowAndRenderer(720, 720, 0, &win, &ren); //window parameters
@@ -19,7 +24,7 @@ int main(void)
 
 
         //colored window stuff
-        SDL_SetRenderDrawColor(ren, 255, 255, 0, 255); //color wanted
+        SDL_SetRenderDrawColor(ren, 255, 120, 0, 255); //color wanted
         SDL_RenderClear(ren);  //will clear it?
         SDL_RenderPresent(ren); //sets it as present?
     
@@ -49,6 +54,30 @@ int main(void)
                       if (e.key.keysym.sym == SDLK_ESCAPE) {
                           quit = true; // Exit on pressing the escape key
                       }
+                    }
+
+
+                    if (e.type == SDL_KEYDOWN) {
+                      if (e.key.keysym.sym == SDLK_SPACE) {
+                            while (timer != 0){
+                                
+                                while (green < 255)
+                                {
+                                    SDL_SetRenderDrawColor(ren, red--, green++, 0, 255); //color wanted
+                                    SDL_RenderClear(ren);  //will clear it?
+                                    SDL_RenderPresent(ren); //sets it as present?    
+                                }  
+                                while (green != 0)
+                                {
+                                    SDL_SetRenderDrawColor(ren, red++, green--, 0, 255); //color wanted
+                                    SDL_RenderClear(ren);  //will clear it?
+                                    SDL_RenderPresent(ren); //sets it as present?  
+                                }  
+                                timer--;                              
+
+                            }                       
+                        }
+                    
                     }
                    
                   
